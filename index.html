@@ -75,10 +75,14 @@
   <img src="rydli_logo.png" alt="Rydli Logo" class="logo">
   <div class="mode-toggle-wrapper">
     <div class="toggle">
-      <button id="btn-rider" onclick="toggleView('rider')">Rider</button>
-      <button id="btn-driver" onclick="toggleView('driver')">Driver</button>
+      <button id="btn-rider">Rider</button>
+      <button id="btn-driver">Driver</button>
+      <button id="btn-estimator">Fare Estimator</button>
     </div>
   </div>
+
+  <!-- Sections remain unchanged -->
+  <!-- ... existing content ... -->
 
   <div id="rider" class="section">
   <section class="hero">
@@ -143,8 +147,9 @@
     </div>
   </section>
 </div>
+</div>
 
-  <div id="driver" class="section">
+<div id="driver" class="section">
   <section class="hero">
     <h1>Drive with Rydli.</h1>
     <p>Earn more. Get treated better. Rydli is built for drivers.</p>
@@ -193,31 +198,50 @@
       <a href="https://drive.rydli.com">Driver App</a>
     </div>
   </section>
-  </div>
+</div>
+</div>
 
-  <footer>
+<div id="estimator" class="section">
+  <section class="hero">
+    <h1>Estimate Your Fare</h1>
+    <p>Enter your start and end address to get an instant fare estimate.</p>
+    <form onsubmit="event.preventDefault(); estimateFare();" style="max-width: 500px; margin: 2rem auto; text-align: left;">
+      <label for="start" style="display:block; margin-bottom: 0.25rem; font-weight: 600;">Starting Address</label>
+      <input type="text" id="start" placeholder="123 Main St" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;">
+      <label for="end" style="display:block; margin-bottom: 0.25rem; font-weight: 600;">Destination Address</label>
+      <input type="text" id="end" placeholder="456 Elm St" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;">
+      <button type="submit" style="width: 100%; padding: 0.75rem; border: none; background: black; color: white; border-radius: 999px; font-weight: 600;">Estimate Fare</button>
+    </form>
+    <p id="fare-result" style="margin-top: 1rem; font-weight: 600; font-size: 1.25rem; color: #007bff;"></p>
+  </section>
+</div>
+
+<footer>
     &copy; 2025 Rydli. All rights reserved.
   </footer>
 
   <script>
-    function toggleView(view) {
-      const riderSection = document.getElementById('rider');
-      const driverSection = document.getElementById('driver');
-      const btnRider = document.getElementById('btn-rider');
-      const btnDriver = document.getElementById('btn-driver');
-      if (!riderSection || !driverSection || !btnRider || !btnDriver) return;
-
-      riderSection.classList.remove('active');
-      driverSection.classList.remove('active');
-      btnRider.classList.remove('active');
-      btnDriver.classList.remove('active');
-
-      document.getElementById(view).classList.add('active');
-      document.getElementById('btn-' + view).classList.add('active');
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
+      function toggleView(view) {
+        const sections = ['rider', 'driver', 'estimator'];
+        sections.forEach(id => {
+          const section = document.getElementById(id);
+          const button = document.getElementById('btn-' + id);
+          if (section) section.classList.remove('active');
+          if (button) button.classList.remove('active');
+        });
+
+        const activeSection = document.getElementById(view);
+        const activeButton = document.getElementById('btn-' + view);
+        if (activeSection) activeSection.classList.add('active');
+        if (activeButton) activeButton.classList.add('active');
+      }
+
       toggleView('rider');
+
+      document.getElementById('btn-rider').addEventListener('click', () => toggleView('rider'));
+      document.getElementById('btn-driver').addEventListener('click', () => toggleView('driver'));
+      document.getElementById('btn-estimator').addEventListener('click', () => toggleView('estimator'));
 
       const confettiScript = document.createElement('script');
       confettiScript.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js";
@@ -242,6 +266,18 @@
         }
       };
       document.body.appendChild(confettiScript);
+
+      window.estimateFare = function () {
+        const start = document.getElementById('start').value.trim();
+        const end = document.getElementById('end').value.trim();
+        const result = document.getElementById('fare-result');
+        if (!start || !end) {
+          result.textContent = "Please enter both addresses.";
+          return;
+        }
+        const randomPrice = (Math.random() * 20 + 10).toFixed(2);
+        result.textContent = `Estimated fare: $${randomPrice}`;
+      };
     });
   </script>
 </body>
