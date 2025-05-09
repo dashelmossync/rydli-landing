@@ -37,50 +37,39 @@
       50% { transform: scale(1.1); opacity: 0.8; }
       100% { transform: scale(1); opacity: 1; }
     }
-  @media (max-width: 768px) {
-  .hero, .screenshots, .features, .subscriptions, .driver-benefits, .app-download {
-    padding: 2rem 1rem;
-  }
-  .plans, .feature-grid, .screenshot-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .plan, .feature {
-    width: 90%;
-  }
-  .buttons a {
-    display: block;
-    margin: 0.5rem auto;
-  }
-  .mode-toggle-wrapper {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .toggle {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .logo {
-    max-width: 80%;
-    max-height: 200px;
-  }
-  form {
-    width: 100%;
-    padding: 0 1rem;
-  }
-}
-</style>
-  <script>
-    function toggleView(view) {
-      document.getElementById('rider').classList.remove('active');
-      document.getElementById('driver').classList.remove('active');
-      document.getElementById(view).classList.add('active');
-      document.getElementById('btn-rider').classList.remove('active');
-      document.getElementById('btn-driver').classList.remove('active');
-      document.getElementById('btn-' + view).classList.add('active');
+    @media (max-width: 768px) {
+      .hero, .screenshots, .features, .subscriptions, .driver-benefits, .app-download {
+        padding: 2rem 1rem;
+      }
+      .plans, .feature-grid, .screenshot-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .plan, .feature {
+        width: 90%;
+      }
+      .buttons a {
+        display: block;
+        margin: 0.5rem auto;
+      }
+      .mode-toggle-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .toggle {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .logo {
+        max-width: 80%;
+        max-height: 200px;
+      }
+      form {
+        width: 100%;
+        padding: 0 1rem;
+      }
     }
-    window.onload = () => toggleView('rider');
-  </script>
+  </style>
 </head>
 <body>
   <img src="rydli_logo.png" alt="Rydli Logo" class="logo">
@@ -90,113 +79,170 @@
       <button id="btn-driver" onclick="toggleView('driver')">Driver</button>
     </div>
   </div>
-<div id="rider" class="section">
-    <section class="hero">
-      <h1>Rides made simple.</h1>
-      <p>Join Rydli — the future of flexible, fair ridesharing.</p>
-      <form action="https://formspree.io/f/mblokdno" method="POST" style="max-width: 400px; margin: 2rem auto;">
-  <label for="email" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Join the Waitlist</label>
-  <input type="email" name="email" id="email" required placeholder="Your email"
-         style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
-  <button type="submit" style="padding: 0.75rem 1.5rem; background: black; color: white; border: none; border-radius: 999px; font-weight: 600;">
-    Submit
-  </button>
-</form>
-    </section>
-    <section class="subscriptions">
-      <h2>Flexible Plans</h2>
-      <div class="plans">
-        <div class="plan">
-          <h3>Pay as You Go</h3>
-          <strong>Only pay per ride</strong>
-          <p>No monthly fees. Perfect for occasional riders who just want flexibility without commitment.</p>
-        </div>
-        <div class="plan" style="border: 2px solid #007bff; background: #e6f0ff; position: relative; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-          <h3 style="color: #007bff; position: relative;">Rydli+ <span style="background: #007bff; color: white; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 6px; margin-left: 0.5rem; vertical-align: middle; animation: pulse 1.5s infinite;">Best Value</span></h3>
-          <strong>$499/month</strong>
-          <p>Includes 1,000 miles of rides, top rated drivers, and priority rider support for a premium experience.</p>
-        </div>
+
+  <div id="rider" class="section">
+  <section class="hero">
+    <h1>Rides made simple.</h1>
+    <p>Join Rydli — the future of flexible, fair ridesharing.</p>
+    <form action="https://formspree.io/f/mblokdno" method="POST" style="max-width: 400px; margin: 2rem auto;">
+      <label for="email" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Join the Waitlist</label>
+      <input type="email" name="email" id="email" required placeholder="Your email"
+            style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
+      <button type="submit" style="padding: 0.75rem 1.5rem; background: black; color: white; border: none; border-radius: 999px; font-weight: 600;">
+        Submit
+      </button>
+    </form>
+  </section>
+  <section class="subscriptions">
+    <h2>Flexible Plans</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Pay as You Go</h3>
+        <strong>Only pay per ride</strong>
+        <p>No monthly fees. Perfect for occasional riders who just want flexibility without commitment.</p>
       </div>
-    </section>
-    <section class="features">
-      <h2>Why Choose Rydli?</h2>
-      <div class="feature-grid">
-  <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-    <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💰 No hidden fees</h4>
-    <p style="margin: 0; color: #333; font-size: 0.95rem;">You pay what you see—no surprises, ever.</p>
-  </div>
-  <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-    <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">🚕 Fair driver pay</h4>
-    <p style="margin: 0; color: #333; font-size: 0.95rem;">We prioritize our drivers with fair and transparent earnings.</p>
-  </div>
-  <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-    <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">📱 Clean, modern app</h4>
-    <p style="margin: 0; color: #333; font-size: 0.95rem;">Simple, sleek, and fast — built for ease of use.</p>
-  </div>
-  <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-    <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">📦 Subscription or Pay-per-Ride</h4>
-    <p style="margin: 0; color: #333; font-size: 0.95rem;">Choose the plan that works best for your lifestyle.</p>
-  </div>
-</div>
-    </section>
-    <section class="screenshots">
-  <h2 style="margin-bottom: 1.5rem;">App Preview</h2>
-  <div style="text-align: center;">
-    <img src="image1.PNG" alt="App preview" style="max-width: 600px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
-    <p style="color: #888; font-size: 0.9rem; margin-top: 1rem;">This is a prototype preview used for illustrative purposes only.</p>
-  </div>
-</section>
-    <section class="app-download">
-      <p>Download the Rider App and get moving with Rydli today.</p>
-      <div class="buttons" style="margin-top: 2rem;">
-        <a href="https://ride.rydli.com">Rider App</a>
+      <div class="plan" style="border: 2px solid #007bff; background: #e6f0ff; position: relative; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
+        <h3 style="color: #007bff; position: relative;">Rydli+ <span style="background: #007bff; color: white; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 6px; margin-left: 0.5rem; vertical-align: middle; animation: pulse 1.5s infinite;">Best Value</span></h3>
+        <strong>$499/month</strong>
+        <p>Includes 1,000 miles of rides, top rated drivers, and priority rider support for a premium experience.</p>
       </div>
-    </section>
-  </div>
-  <div id="driver" class="section">
-    <section class="hero">
-      <h1>Drive with Rydli.</h1>
-      <p>Earn more. Get treated better. Rydli is built for drivers.</p>
-      <form action="https://formspree.io/f/xovdljgo" method="POST" style="max-width: 400px; margin: 2rem auto;">
-  <label for="driverEmail" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Sign Up to Drive</label>
-  <input type="email" name="email" id="driverEmail" required placeholder="Your email"
-         style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
-  <button type="submit" style="padding: 0.75rem 1.5rem; background: black; color: white; border: none; border-radius: 999px; font-weight: 600;">
-    Submit
-  </button>
-</form>
-      <div class="promo">💸 Get 100% of the ride fare on your first 50 rides — only on Rydli.</div>
-    </section>
-    <section class="driver-benefits">
-      <h2>Driver Benefits</h2>
-      <div class="feature-grid">
-        <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-  <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💸 Keep more of what you earn</h4>
-  <p style="margin: 0; color: #333; font-size: 0.95rem;">Our low commission structure puts more money in your pocket every ride.</p>
-</div>
-<div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-  <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">⏰ Flexible hours</h4>
-  <p style="margin: 0; color: #333; font-size: 0.95rem;">You're in control — drive whenever it fits your schedule.</p>
-</div>
-<div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-  <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💳 Get paid daily</h4>
-  <p style="margin: 0; color: #333; font-size: 0.95rem;">Instant access to your earnings so you’re never left waiting.</p>
-</div>
-<div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
-  <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">🏬 Driver Support Centers</h4>
-  <p style="margin: 0; color: #333; font-size: 0.95rem;">Access in-person support, free snacks, drinks, and a comfortable place to recharge at any of our driver support centers.</p>
+    </div>
+  </section>
+  <section class="features">
+    <h2>Why Choose Rydli?</h2>
+    <div class="feature-grid">
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💰 No hidden fees</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">You pay what you see—no surprises, ever.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">🚕 Fair driver pay</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">We prioritize our drivers with fair and transparent earnings.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">📱 Clean, modern app</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Simple, sleek, and fast — built for ease of use.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">📦 Subscription or Pay-per-Ride</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Choose the plan that works best for your lifestyle.</p>
+      </div>
+    </div>
+  </section>
+  <section class="screenshots">
+    <h2 style="margin-bottom: 1.5rem;">App Preview</h2>
+    <div style="text-align: center;">
+      <img src="image1.PNG" alt="App preview" style="max-width: 600px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+      <p style="color: #888; font-size: 0.9rem; margin-top: 1rem;">This is a prototype preview used for illustrative purposes only.</p>
+    </div>
+  </section>
+  <section class="app-download">
+    <p>Download the Rider App and get moving with Rydli today.</p>
+    <div class="buttons" style="margin-top: 2rem;">
+      <a href="https://ride.rydli.com">Rider App</a>
+    </div>
+  </section>
 </div>
 
-    </section>
-    <section class="app-download">
-      <p>Download the Driver App to start earning with Rydli today.</p>
-      <div class="buttons" style="margin-top: 2rem;">
-        <a href="https://drive.rydli.com">Driver App</a>
+  <div id="driver" class="section">
+  <section class="hero">
+    <h1>Drive with Rydli.</h1>
+    <p>Earn more. Get treated better. Rydli is built for drivers.</p>
+    <form action="https://formspree.io/f/xovdljgo" method="POST" style="max-width: 400px; margin: 2rem auto;">
+      <label for="driverEmail" style="display:block; margin-bottom: 0.5rem; font-weight: 600;">Sign Up to Drive</label>
+      <input type="email" name="email" id="driverEmail" required placeholder="Your email"
+            style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 1rem;" />
+      <button type="submit" style="padding: 0.75rem 1.5rem; background: black; color: white; border: none; border-radius: 999px; font-weight: 600;">
+        Submit
+      </button>
+    </form>
+    <div class="promo">💸 Get 100% of the ride fare on your first 50 rides — only on Rydli.</div>
+  </section>
+  <section class="driver-benefits">
+    <h2>Driver Benefits</h2>
+    <div class="feature-grid">
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💸 Keep more of what you earn</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Our low commission structure puts more money in your pocket every ride.</p>
       </div>
-    </section>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">⏰ Flexible hours</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">You're in control — drive whenever it fits your schedule.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">💳 Get paid daily</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Instant access to your earnings so you’re never left waiting.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">📈 Simple payouts</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">No confusing formulas — just clear, fair pay.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">🏦 Banking with debit card</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Access your funds with a Rydli debit card and manage your balance directly in the app.</p>
+      </div>
+      <div class="feature" style="border-left: 4px solid #007bff; background: #f0f8ff;">
+        <h4 style="margin-bottom: 0.5rem; color: #007bff; font-weight: 600;">🏬 Driver Support Centers</h4>
+        <p style="margin: 0; color: #333; font-size: 0.95rem;">Access in-person support, free snacks, drinks, and a comfortable place to recharge at any of our driver support centers.</p>
+      </div>
+    </div>
+  </section>
+  <section class="app-download">
+    <p>Download the Driver App to start earning with Rydli today.</p>
+    <div class="buttons" style="margin-top: 2rem;">
+      <a href="https://drive.rydli.com">Driver App</a>
+    </div>
+  </section>
   </div>
+
   <footer>
     &copy; 2025 Rydli. All rights reserved.
   </footer>
+
+  <script>
+    function toggleView(view) {
+      const riderSection = document.getElementById('rider');
+      const driverSection = document.getElementById('driver');
+      const btnRider = document.getElementById('btn-rider');
+      const btnDriver = document.getElementById('btn-driver');
+      if (!riderSection || !driverSection || !btnRider || !btnDriver) return;
+
+      riderSection.classList.remove('active');
+      driverSection.classList.remove('active');
+      btnRider.classList.remove('active');
+      btnDriver.classList.remove('active');
+
+      document.getElementById(view).classList.add('active');
+      document.getElementById('btn-' + view).classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      toggleView('rider');
+
+      const confettiScript = document.createElement('script');
+      confettiScript.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js";
+      confettiScript.onload = () => {
+        const riderBtn = document.querySelector('a[href="https://ride.rydli.com"]');
+        const driverBtn = document.querySelector('a[href="https://drive.rydli.com"]');
+
+        if (riderBtn) {
+          riderBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => window.location.href = this.href, 1000);
+          });
+        }
+
+        if (driverBtn) {
+          driverBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => window.location.href = this.href, 1000);
+          });
+        }
+      };
+      document.body.appendChild(confettiScript);
+    });
+  </script>
 </body>
 </html>
