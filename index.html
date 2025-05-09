@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rydli – Modern Rideshare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111; line-height: 1.6; }
+    .logo { display: block; margin: 2rem auto 0; height: 48px; }
+    .mode-toggle-wrapper { display: flex; justify-content: center; padding: 2rem; background: #fff; border-bottom: 1px solid #eee; }
+    .toggle { background: #f0f0f0; border-radius: 999px; padding: 0.5rem; display: flex; gap: 0.5rem; }
+    .toggle button { background: transparent; border: none; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; cursor: pointer; color: #333; }
+    .toggle button.active { background: black; color: white; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .hero, .screenshots, .features, .subscriptions, .driver-benefits, .app-download { padding: 4rem 2rem; text-align: center; }
+    .buttons a { display: inline-block; margin: 0 0.5rem; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 999px; text-decoration: none; color: white; background: black; transition: background 0.3s; }
+    .buttons a:hover { background: #333; }
+    .promo { margin-top: 2.5rem; background: #f1f5f9; padding: 1rem 1.5rem; border-radius: 12px; display: inline-block; font-weight: 600; color: #0f172a; }
+    .feature-grid, .plans, .screenshot-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+    .feature, .plan, .driver-benefit { background: #f8f9fa; padding: 2rem; border-radius: 16px; width: 280px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); text-align: left; }
+    .driver-benefits h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .app-download p { font-size: 1.1rem; margin-bottom: 1rem; }
+    footer { text-align: center; padding: 2rem; font-size: 0.875rem; color: #888; }
+  </style>
+  <script>
+    function toggleView(view) {
+      document.getElementById('rider').classList.remove('active');
+      document.getElementById('driver').classList.remove('active');
+      document.getElementById(view).classList.add('active');
+      document.getElementById('btn-rider').classList.remove('active');
+      document.getElementById('btn-driver').classList.remove('active');
+      document.getElementById('btn-' + view).classList.add('active');
+    }
+    window.onload = () => toggleView('rider');
+  </script>
+</head>
+<body>
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAYAAAB/HSuDAAEAAElEQVR4nFy9W5Yk261jC9JS3arb/y" alt="Rydli Logo" class="logo">
+  <div class="mode-toggle-wrapper">
+    <div class="toggle">
+      <button id="btn-rider" onclick="toggleView('rider')">Rider</button>
+      <button id="btn-driver" onclick="toggleView('driver')">Driver</button>
+    </div>
+  </div>
+  <div id="rider" class="section">
+    <section class="hero">
+      <h1>Rides made simple.</h1>
+      <p>Join Rydli — the future of flexible, fair ridesharing.</p>
+      <div class="buttons" style="margin-top: 2rem;">
+        <a href="#">Join the Waitlist</a>
+      </div>
+    </section>
+    <section class="subscriptions">
+      <h2>Flexible Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Pay as You Go</h3>
+          <strong>Only pay per ride</strong>
+          <p>No monthly fees. Perfect for occasional riders who just want flexibility without commitment.</p>
+        </div>
+        <div class="plan">
+          <h3>Rydli+ Subscription</h3>
+          <strong>$499/month</strong>
+          <p>Includes 1,000 miles of rides, top rated drivers, and priority rider support for a premium experience.</p>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+      <h2>Why Choose Rydli?</h2>
+      <div class="feature-grid">
+        <div class="feature">No hidden fees</div>
+        <div class="feature">Fair driver pay</div>
+        <div class="feature">Clean, modern app</div>
+        <div class="feature">Subscription or Pay-per-Ride</div>
+      </div>
+    </section>
+    <section class="screenshots">
+      <h2>App Preview</h2>
+      <div class="screenshot-gallery">
+        <img src="screenshot1.png" alt="App screenshot 1">
+        <img src="screenshot2.png" alt="App screenshot 2">
+        <img src="screenshot3.png" alt="App screenshot 3">
+      </div>
+    </section>
+    <section class="app-download">
+      <p>Download the Rider App and get moving with Rydli today.</p>
+      <div class="buttons" style="margin-top: 2rem;">
+        <a href="https://ride.rydli.com">Rider App</a>
+      </div>
+    </section>
+  </div>
+  <div id="driver" class="section">
+    <section class="hero">
+      <h1>Drive with Rydli.</h1>
+      <p>Earn more. Get treated better. Rydli is built for drivers.</p>
+      <div class="buttons" style="margin-top: 2rem;">
+        <a href="#">Sign Up to Drive</a>
+      </div>
+      <div class="promo">💸 Get 100% of the ride fare on your first 50 rides — only on Rydli.</div>
+    </section>
+    <section class="driver-benefits">
+      <h2>Driver Benefits</h2>
+      <div class="feature-grid">
+        <div class="driver-benefit">Keep more of what you earn</div>
+        <div class="driver-benefit">Flexible hours — you decide when</div>
+        <div class="driver-benefit">Get paid daily</div>
+        <div class="driver-benefit">No complicated commission structures</div>
+        <div class="driver-benefit">Includes a debit card and banking features where you can keep a balance</div>
+      </div>
+    </section>
+    <section class="app-download">
+      <p>Download the Driver App to start earning with Rydli today.</p>
+      <div class="buttons" style="margin-top: 2rem;">
+        <a href="https://drive.rydli.com">Driver App</a>
+      </div>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Rydli. All rights reserved.
+  </footer>
+</body>
+</html>
