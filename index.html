@@ -10,7 +10,13 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111; line-height: 1.6; }
-    .logo { display: block; margin: 2rem auto 0; height: 48px; }
+    .logo {
+  display: block;
+  margin: 2rem auto 0;
+  height: auto;
+  max-height: 300px;
+  max-width: 400px;
+}
     .mode-toggle-wrapper { display: flex; justify-content: center; padding: 2rem; background: #fff; border-bottom: 1px solid #eee; }
     .toggle { background: #f0f0f0; border-radius: 999px; padding: 0.5rem; display: flex; gap: 0.5rem; }
     .toggle button { background: transparent; border: none; padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; cursor: pointer; color: #333; }
@@ -40,7 +46,7 @@
   </script>
 </head>
 <body>
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAYAAAB/HSuDAAEAAElEQVR4nFy9W5Yk261jC9JS3arb/y" alt="Rydli Logo" class="logo">
+  <img src="rydli_logo.png" alt="Rydli Logo" class="logo">
   <div class="mode-toggle-wrapper">
     <div class="toggle">
       <button id="btn-rider" onclick="toggleView('rider')">Rider</button>
