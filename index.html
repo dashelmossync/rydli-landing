@@ -266,6 +266,19 @@
         }
       };
       document.body.appendChild(confettiScript);
+      
+function initAutocomplete() {
+  const options = {
+    types: ['address'],
+    componentRestrictions: { country: 'US' }
+  };
+
+  const startInput = document.getElementById('start');
+  const endInput = document.getElementById('end');
+  
+  new google.maps.places.Autocomplete(startInput, options);
+  new google.maps.places.Autocomplete(endInput, options);
+}
 
       window.estimateFare = function () {
   const start = document.getElementById('start').value.trim();
@@ -279,7 +292,7 @@
 
   result.textContent = "Calculating...";
 
-  const apiKey = 'AIzaSyB8Way8cUMxdfRkt0boTbFvulPxxlKjMuI'; // Replace with your real Google Maps API key
+  const apiKey = 'AIzaSyB8Way8cUMxdfRkt0boTbFvulPxxlKjMuI';  // Add your API key here
   const url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=' +
               encodeURIComponent(start) + '&destinations=' + encodeURIComponent(end) + '&key=' + apiKey;
 
@@ -301,5 +314,9 @@
 };
     });
   </script>
+
+  <!-- The script to load Google Maps and Places Autocomplete API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8Way8cUMxdfRkt0boTbFvulPxxlKjMuI&libraries=places&callback=initAutocomplete" async defer></script>
+
 </body>
 </html>
